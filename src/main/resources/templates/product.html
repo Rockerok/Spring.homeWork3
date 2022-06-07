@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Информация о продукте</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+</head>
+<body>
+<h2>Информация о продукте</h2>
+<p th:text="${'ID: '+product.id}"></p>
+<p th:text="${'Title: '+product.title}"></p>
+<p th:text="${'Cost: '+product.cost}"></p>
+<p></p>
+<p><a th:href="@{'/show_all'}">All products</a></p>
+<p><a th:href="@{'/'}">Index</a></p>
+</body>
+</html>

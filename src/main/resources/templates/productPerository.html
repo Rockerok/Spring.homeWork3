@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список продуктов</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+</head>
+<body>
+<table>
+    <thead><tr><td> ID </td><td> Title </td><td> Cost </td><td></td></tr></thead>
+    <tbody>
+    <tr th:each ="p: ${productPerository}">
+        <td th:text="${p.id}"></td>
+        <td th:text="${p.title}"></td>
+        <td th:text="${p.cost}"></td>
+        <td><a th:href = "@{'/show/'+${p.id}}">more</a></td>
+    </tr>
+    </tbody>
+</table>
+<p><span th:text="${'Total products: '+productPerository.size() }"></span></p>
+<p><a th:href="@{'/create'}">Create new products</a></p>
+<p><a th:href="@{'/'}">Index</a></p>
+</body>
+</html>
