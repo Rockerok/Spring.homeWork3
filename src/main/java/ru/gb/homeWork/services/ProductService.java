@@ -27,4 +27,12 @@ public class ProductService {
     public Product showById (Long id){
         return productRepository.showById(id);
     }
+
+    public List<Product>  upCostProductId(Long id) {
+        return productRepository.upCostId(id);
+    }
+
+    public List<Product>  downCostProductId(Long id) {
+        return productRepository.downCostId(id);
+    }
 }

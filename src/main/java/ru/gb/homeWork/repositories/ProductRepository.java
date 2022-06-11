@@ -23,7 +23,7 @@ public class ProductRepository {
     @PostConstruct
     private void init() {
         this.prodRepo = new ArrayList<>(Arrays.asList(
-                new Product(1L,"tomatoes", 25)
+                new Product(1L,"tomatoes", 250)
         ));
     }
 
@@ -37,5 +37,23 @@ public class ProductRepository {
 
     public Product showById (Long id){
         return  prodRepo.stream().filter(product -> product.getId().equals(id)).findFirst().get();
+    }
+
+    public List<Product> upCostId(Long id) {
+        for (Product product:prodRepo) {
+            if(product.getId().equals(id)){
+                product.setCost(product.getCost()+1);
+            }
+        }
+        return Collections.unmodifiableList(prodRepo);
+    }
+
+    public List<Product> downCostId(Long id) {
+        for (Product product:prodRepo) {
+            if(product.getId().equals(id)){
+                product.setCost(product.getCost()-1);
+            }
+        }
+        return Collections.unmodifiableList(prodRepo);
     }
 }

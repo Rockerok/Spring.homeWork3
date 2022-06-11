@@ -32,6 +32,18 @@ public class ProductController {
         return "product";
     }
 
+    @GetMapping (value = "/upCostID/{id}")
+    public String upCostProductId(Model model, @PathVariable Long id){
+        model.addAttribute("product", productService.upCostProductId(id));
+        return "redirect:/show_all";
+    }
+
+    @GetMapping (value = "/downCostID/{id}")
+    public String downCostProductId(Model model, @PathVariable Long id){
+        model.addAttribute("product", productService.downCostProductId(id));
+        return "redirect:/show_all";
+    }
+
     @GetMapping (value = "/create")
     public String createProduct(){
         return "createProduct";

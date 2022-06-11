@@ -16,6 +16,8 @@
         <td th:text="${p.title}"></td>
         <td th:text="${p.cost}"></td>
         <td><a th:href = "@{'/show/'+${p.id}}">more</a></td>
+        <td><a th:href = "@{'/upCostID/'+${p.id}}">up</a></td>
+        <td><a th:href = "@{'/downCostID/'+${p.id}}">down</a></td>
     </tr>
     </tbody>
 </table>
