@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание продукта</title>
+</head>
+<body>
+<form method="post" th:action="@{'/create'}">
+    <div>
+        <label>ID</label>
+        <input type="number" id="productId" name="id">
+    </div>
+    <div>
+        <label>Title</label>
+        <input type="text" id="productTitle" name="title">
+    </div>
+    <div>
+        <label>Cost</label>
+        <input type="number" id="productCost" name="cost">
+    </div>
+    <button type="submit"> Save </button>
+
+</form>
+<p></p>
+    <a th:href="@{'/show_all'}">All products</a></p>
+</body>
+</html>
